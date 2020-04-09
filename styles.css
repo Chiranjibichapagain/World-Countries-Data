@@ -6,6 +6,7 @@
 body {
   display: flex;
   justify-content: center;
+  background-color: rgb(240, 238, 238);
 }
 main {
   display: flex;
@@ -97,16 +98,8 @@ button:hover {
   padding: 2%;
   display: flex;
   flex-wrap: wrap;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
-}
-
-.graphDisplay {
-  width: 90vw;
-  height: 30vw;
-  color: white;
-  box-shadow: 0em 0em 0.2em black;
-  margin-top: 1%;
 }
 
 .countryBox {
@@ -123,14 +116,14 @@ button:hover {
 }
 
 #flagImage {
-  width: 200px;
-  height: 100px;
+  max-width: 200px;
+  max-height: 100px;
   box-shadow: 0em 0em 0.2em rgba(0, 0, 0, 0.493);
   margin-bottom: 2%;
 }
 
 #countryName {
-  color:#cc39c6;
+  color: #cc39c6;
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 0.8rem;
   text-align: center;
@@ -138,7 +131,8 @@ button:hover {
 }
 
 #capital {
-  color:#000000;
+  width: 80%;
+  color: #000000;
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 0.8rem;
   align-self: start;
@@ -146,18 +140,88 @@ button:hover {
 }
 
 #languages {
-  color:#000000;
+  width: 200px;
+  color: #000000;
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 0.8rem;
   align-self: start;
   margin: 0% 0% 0.8% 5%;
-  
 }
 
 #population {
-  color:#000000;
+  color: #000000;
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 0.8rem;
   align-self: start;
   margin: 0% 0% 0.8% 5%;
+}
+
+.graphDisplay {
+  width: 85vw;
+  color: white;
+  box-shadow: 0em 0em 0.2em black;
+  margin-top: 1%;
+  padding: 3% 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.graphDisplay > h2 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: #cc39c6;
+  font-size: 2rem;
+  letter-spacing: 0.3rem;
+}
+#graphContainer {
+  width: 80%;
+  background: rgb(255, 255, 255);
+  border: solid #cc39c6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1%;
+  padding: 2%;
+}
+
+#mainDiv {
+  width: 95%;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2%;
+}
+
+#graphCountry {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 1rem;
+  color: #cc39c6;
+  text-align: right;
+  width: 150px;
+  margin: 0%;
+}
+
+#graphOuter {
+  width: 90%;
+  height: 50px;
+  border: rgb(175, 2, 141) thin solid;
+  border-radius: 0px 4px 4px 0px;
+  justify-items: center;
+  margin: 0% 5%;
+}
+
+#graphInner {
+  height: 100%;
+  background: #cc39c6;
+  margin: 0%;
+}
+
+#graphPopulation {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  color: #cc39c6;
+  text-align: left;
 }
