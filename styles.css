@@ -1,0 +1,163 @@
+* {
+  margin: 0%;
+  padding: 0%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2%;
+}
+.titleDiv {
+  width: 90vw;
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1%;
+  padding: 1%;
+  background: white;
+  box-shadow: 0em 0em 0.2em black;
+}
+.titleDiv > h1 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: #cc39c6;
+  font-size: 2.2rem;
+  letter-spacing: 0.5rem;
+}
+
+.titleDiv > p {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 1rem;
+  margin: 0.3%;
+}
+
+.searchFilter {
+  width: 90vw;
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#searchBox {
+  width: 40vw;
+  min-height: 9vh;
+  border-radius: 2em;
+  border-style: none;
+  border: solid #cc39c6 0.1em;
+  text-align: center;
+  margin: 1% 0%;
+}
+
+#searchBox:hover {
+  box-shadow: 0em 0em 0.5em rgba(0, 0, 0, 0.719);
+}
+
+.filters {
+  width: 40vw;
+  display: flex;
+  justify-content: center;
+  padding: 1%;
+}
+
+button {
+  width: 150px;
+  background: #cc39c6;
+  border-style: none;
+  font-size: 1.2rem;
+  padding: 2% 4%;
+  margin-right: 2%;
+  border-radius: 0.2em;
+  cursor: pointer;
+}
+
+button:hover {
+  background: rgb(255, 255, 255);
+  border: solid #cc39c6;
+}
+
+#graphIcon {
+  width: 40px;
+}
+
+.countryDisplay {
+  width: 90vw;
+  color: white;
+  box-shadow: 0em 0em 0.2em black;
+  margin-top: 1%;
+  padding: 2%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:center;
+  align-items: center;
+}
+
+.graphDisplay {
+  width: 90vw;
+  height: 30vw;
+  color: white;
+  box-shadow: 0em 0em 0.2em black;
+  margin-top: 1%;
+}
+
+.countryBox {
+  width: 20%;
+  height: 45%;
+  background: white;
+  box-shadow: 0em 0em 0.2em black;
+  padding: 0.5%;
+  margin: 1.5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#flagImage {
+  width: 200px;
+  height: 100px;
+  box-shadow: 0em 0em 0.2em rgba(0, 0, 0, 0.493);
+  margin-bottom: 2%;
+}
+
+#countryName {
+  color:#cc39c6;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 0.8rem;
+  text-align: center;
+  margin-bottom: 5%;
+}
+
+#capital {
+  color:#000000;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 0.8rem;
+  align-self: start;
+  margin: 0% 0% 0.8% 5%;
+}
+
+#languages {
+  color:#000000;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 0.8rem;
+  align-self: start;
+  margin: 0% 0% 0.8% 5%;
+  
+}
+
+#population {
+  color:#000000;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 0.8rem;
+  align-self: start;
+  margin: 0% 0% 0.8% 5%;
+}
