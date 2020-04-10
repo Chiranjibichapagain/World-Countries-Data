@@ -11,8 +11,6 @@ countries.map(
       ((item.population / totalPopulation) * 100).toFixed(2) + "%")
 );
 
-console.log(countries);
-
 function displayCountries(arr) {
   for (let i = 0; i < arr.length; i++) {
     let countryBox = document.createElement("div");
@@ -42,14 +40,14 @@ function displayCountries(arr) {
 }
 displayCountries(countries);
 
-function clearIt() {
-  let x = document.querySelectorAll(".countryBox");
+function clearIt(target) {
+  let x = document.querySelectorAll(target);
   x.forEach((item) => item.remove());
   return x;
 }
 
 function filterCountries() {
-  clearIt();
+  clearIt(".countryBox");
 
   let textInput = document.querySelector("#searchBox").value.toLowerCase();
   let newArr = searchThrough(countries, textInput);
@@ -62,14 +60,17 @@ function searchThrough(arr, input) {
   let filArr = [];
   for (let i = 0; i < arr.length; i++) {
     let LAN = arr[i].languages;
+    // sortsby country name and capital 
+    let nameSort = arr[i].name.toLowerCase().indexOf(input) > -1
+    let capitalSort = arr[i].capital.toLocaleLowerCase().indexOf(input) > -1
 
-    for (let j = 0; j < LAN.length; j++) {
-      if (
-        arr[i].name.toLowerCase().indexOf(input) > -1 ||
-        arr[i].capital.toLocaleLowerCase().indexOf(input) > -1 ||
-        arr[i].languages[j].toLowerCase().indexOf(input) > -1
-      ) {
-        filArr.push(arr[i]);
+    if (nameSort|| capitalSort ) {
+      filArr.push(arr[i]);
+    } else {
+      for (let j = 0; j < LAN.length; j++) {
+        if (arr[i].languages[j].toLowerCase().indexOf(input) > -1) {
+          filArr.push(arr[i]);
+        }
       }
     }
   }
@@ -77,7 +78,7 @@ function searchThrough(arr, input) {
 }
 
 function sortByName() {
-  clearIt();
+  clearIt(".countryBox");
   let textInput = document.querySelector("#searchBox").value.toLowerCase();
   let Arr = searchThrough(countries, textInput);
   let sortedArr = Arr.sort(compareName);
@@ -87,34 +88,40 @@ function sortByName() {
 document.getElementById("b-name").addEventListener("click", sortByName);
 
 function sortByCapital() {
-  clearIt();
+  clearIt(".countryBox");
   let textInput = document.querySelector("#searchBox").value.toLowerCase();
   let Arr = searchThrough(countries, textInput);
   let sortedArr = Arr.sort(compareCapital);
   displayCountries(sortedArr);
-
-  console.log(Arr);
 }
 
 document.getElementById("b-capital").addEventListener("click", sortByCapital);
 
 function sortByPopulation() {
-  clearIt();
+  clearIt(".countryBox");
   let textInput = document.querySelector("#searchBox").value.toLowerCase();
   let Arr = searchThrough(countries, textInput);
   let sortedArr = Arr.sort(comparePopulation);
   displayCountries(sortedArr);
-
-  // console.log(Arr);
 }
+
+function graphIt() {
+  let x = clearIt("#mainDiv");
+  let textInput = document.querySelector("#searchBox").value.toLowerCase();
+  let graphArray = searchThrough(countries, textInput);
+  graphArray.push({
+    name: "World",
+    population: 7349137231,
+  });
+  let sortGraphArray = graphArray.sort(comparePopulation).reverse();
+  displayGraph(sortGraphArray);
+}
+
+document.getElementById("graphIcon").addEventListener("click", graphIt);
 
 document
   .getElementById("b-population")
   .addEventListener("click", sortByPopulation);
-
-// grpahs
-
-function displayGrpah() {}
 
 /// filter functions( name, capital, population)
 

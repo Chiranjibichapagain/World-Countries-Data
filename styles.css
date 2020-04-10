@@ -83,7 +83,7 @@ button {
 
 button:hover {
   background: rgb(255, 255, 255);
-  border: solid #cc39c6;
+  border: solid thin #cc39c6;
 }
 
 #graphIcon {
